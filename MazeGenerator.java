@@ -19,7 +19,7 @@ public class MazeGenerator {
 		int height = 100;
 		int width = 100;
 		
-		generateMaze(width, height);
+		generate(width, height);
 	}
 	
 	public static int[][] generateMaze(int width, int height){
@@ -186,7 +186,7 @@ public class MazeGenerator {
 		return neighbors;
 	}
 
-	public File drawMaze(int[][] maze,int width,int height) 
+	public static File drawMaze(int[][] maze,int width,int height) 
     {
 		int pixelHeight = 1;
 		int pixelWidth = 1;
@@ -213,6 +213,7 @@ public class MazeGenerator {
 	    try {
 		    File file = new File("maze.gif");
 			ImageIO.write(imageToBufferedImage(image),"gif",file);
+			System.out.println("printed image");
 			return file;
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -240,7 +241,7 @@ public class MazeGenerator {
 	    return image;
 	  }
 	 
-	 public File generate(int width, int height) {
+	 public static File generate(int width, int height) {
 		 int[][] maze = generateMaze(width, height);
 		 return drawMaze(maze, maze.length, maze[0].length);
 	 }
