@@ -15,6 +15,13 @@ import javax.swing.JLabel;
 
 public class MazeGenerator {
 	
+	public static void main(String[] args) {
+		int height = 100;
+		int width = 100;
+		
+		generateMaze(width, height);
+	}
+	
 	public static int[][] generateMaze(int width, int height){
 		
 		Random rng = new Random();
